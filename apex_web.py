@@ -6,7 +6,37 @@ import streamlit as st
 
 ENGINE = Path(__file__).resolve().parent / 'apex_engine_v21.py'
 st.set_page_config(page_title='APEX | Quant Research', page_icon='📈', layout='wide')
-st.markdown('''<style>.block-container{max-width:1150px;padding-top:2rem}div[data-testid="stMetric"]{background:#172435;border:1px solid #31445c;border-radius:12px;padding:15px}h1,h2,h3{letter-spacing:-.025em}</style>''', unsafe_allow_html=True)
+st.markdown("""<style>
+/* APEX mobile-first light finance dashboard; presentation only. */
+.stApp, [data-testid="stAppViewContainer"] {background:#f3f7fc;color:#15253c;}
+[data-testid="stHeader"] {background:rgba(243,247,252,.95);}
+[data-testid="stSidebar"] {background:#e7effa;}
+[data-testid="stSidebar"] * {color:#17304f;}
+.block-container {max-width:1180px;padding-top:1.7rem;padding-bottom:3rem;}
+h1,h2,h3 {letter-spacing:-.025em;color:#12335b;}
+h1 {font-weight:850!important;}
+p,li,label {line-height:1.65;}
+[data-testid="stMetric"] {
+ background:#fff!important;border:1px solid #d9e4f1;border-left:5px solid #367ee9;
+ border-radius:16px;padding:16px;box-shadow:0 5px 18px rgba(19,47,85,.07);
+}
+[data-testid="stMetricLabel"] {color:#4c6382;}
+[data-testid="stMetricValue"] {color:#132f53;font-weight:800;}
+[data-testid="stHorizontalBlock"] > div:nth-child(2) [data-testid="stMetric"] {border-left-color:#d5a029;}
+[data-testid="stHorizontalBlock"] > div:nth-child(3) [data-testid="stMetric"] {border-left-color:#16966c;}
+[data-testid="stHorizontalBlock"] > div:nth-child(4) [data-testid="stMetric"] {border-left-color:#d8545c;}
+[data-testid="stAlert"] {border-radius:14px;}
+[data-testid="stExpander"] {background:#fff;border:1px solid #d9e4f1;border-radius:12px;}
+div.stButton > button[kind="primary"] {background:#1763c6;color:white;border:0;border-radius:11px;font-weight:800;min-height:46px;}
+div.stButton > button[kind="primary"]:hover {background:#104d9e;color:#fff;}
+[data-testid="stDataFrame"],[data-testid="stJson"] {border-radius:12px;}
+@media(max-width:700px) {
+ .block-container {padding:1.2rem .8rem 2rem;}
+ h1 {font-size:2.1rem!important;}
+ [data-testid="stMetric"] {padding:12px;}
+ [data-testid="stMetricValue"] {font-size:1.45rem;}
+}
+</style>""", unsafe_allow_html=True)
 st.title('APEX · V2.1')
 st.caption('Advanced Predictive Equity eXecution | 本機美股量化研究儀表板')
 st.warning('研究原型：不連接券商、不會下單。機率是模型估計，不是已驗證的真實勝率。Heston 完整校準及財報事件專屬模型尚未實作。',icon='⚠️')
